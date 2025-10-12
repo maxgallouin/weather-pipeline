@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "enpal-weather-pipeline"
+version = "1.0.0"
+description = "Weather data ingestion and transformation pipeline for ML forecasting"
+authors = ["Enpal Data Engineering"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+psycopg2-binary = "^2.9.9"
+sqlalchemy = "^1.4.36"
+geoalchemy2 = "^0.14.3"
+requests = "^2.31.0"
+shapely = "^2.0.2"
+pandas = "^2.1.4"
+numpy = "^1.26.2"
+python-dotenv = "^1.0.0"
+apache-airflow = "^3.1.0"
+brotli = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+black = "^23.12.0"
+ruff = "^0.1.8"
+mypy = "^1.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
